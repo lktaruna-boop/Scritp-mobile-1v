@@ -1,6 +1,6 @@
 -- ============================================
--- 💎 PAINEL PREMIUM - VERSÃO 5.0 💎
--- DESIGN PROFISSIONAL | ORGANIZADO | PERFEITO
+-- 💎 PAINEL PREMIUM - VERSÃO 5.0 BRANCA 💎
+-- FUNDO ESCURO | TEXTOS BRANCOS | ALTO CONTRASTE
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -13,19 +13,19 @@ local TweenService = game:GetService("TweenService")
 local Lighting = game:GetService("Lighting")
 
 -- ============================================
--- CONFIGURAÇÕES DE CORES
+-- CONFIGURAÇÕES DE CORES (FUNDO ESCURO, TEXTO BRANCO)
 -- ============================================
 local COLORS = {
-    -- Fundos
-    Background = Color3.fromRGB(12, 12, 24),
-    BackgroundSecondary = Color3.fromRGB(20, 20, 38),
-    Card = Color3.fromRGB(28, 28, 52),
-    CardHover = Color3.fromRGB(40, 40, 72),
+    -- Fundos (Escuros para destacar o branco)
+    Background = Color3.fromRGB(15, 15, 30), -- Preto azulado
+    BackgroundSecondary = Color3.fromRGB(25, 25, 45),
+    Card = Color3.fromRGB(35, 35, 65), -- Cinza escuro dos botões
+    CardHover = Color3.fromRGB(50, 50, 90),
     
-    -- Cores principais
-    Primary = Color3.fromRGB(120, 100, 255),
-    PrimaryLight = Color3.fromRGB(160, 140, 255),
-    PrimaryDark = Color3.fromRGB(80, 60, 200),
+    -- Cores principais (bordas vibrantes)
+    Primary = Color3.fromRGB(0, 120, 255), -- Azul vibrante
+    PrimaryLight = Color3.fromRGB(80, 160, 255),
+    PrimaryDark = Color3.fromRGB(0, 80, 180),
     
     -- Status
     Success = Color3.fromRGB(0, 230, 118),
@@ -33,10 +33,10 @@ local COLORS = {
     Warning = Color3.fromRGB(255, 200, 0),
     Info = Color3.fromRGB(0, 200, 255),
     
-    -- Textos
-    Text = Color3.fromRGB(255, 255, 255),
-    TextSecondary = Color3.fromRGB(180, 180, 210),
-    TextMuted = Color3.fromRGB(120, 120, 160),
+    -- Textos (TODOS BRANCOS PARA MÁXIMA VISIBILIDADE)
+    Text = Color3.fromRGB(255, 255, 255), -- Branco puro
+    TextSecondary = Color3.fromRGB(220, 220, 240), -- Branco levemente acinzentado
+    TextMuted = Color3.fromRGB(200, 200, 220),
     
     -- Categorias
     Combat = Color3.fromRGB(255, 70, 70),
@@ -128,8 +128,8 @@ local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 400, 0, 600)
 mainFrame.Position = UDim2.new(0.5, -200, 0.5, -300)
 mainFrame.BackgroundColor3 = COLORS.Background
-mainFrame.BackgroundTransparency = 0.03
-mainFrame.BorderSizePixel = 1
+mainFrame.BackgroundTransparency = 0.05
+mainFrame.BorderSizePixel = 2
 mainFrame.BorderColor3 = COLORS.Primary
 mainFrame.ClipsDescendants = true
 mainFrame.Parent = screenGui
@@ -144,8 +144,8 @@ mainCorner.Parent = mainFrame
 local menuShadow = Instance.new("Frame")
 menuShadow.Size = UDim2.new(1.02, 0, 1.02, 0)
 menuShadow.Position = UDim2.new(-0.01, 0, -0.01, 0)
-menuShadow.BackgroundColor3 = COLORS.Primary
-menuShadow.BackgroundTransparency = 0.92
+menuShadow.BackgroundColor3 = COLORS.BackgroundSecondary
+menuShadow.BackgroundTransparency = 0.9
 menuShadow.BorderSizePixel = 0
 menuShadow.Parent = mainFrame
 
@@ -156,10 +156,10 @@ shadowCorner2.Parent = menuShadow
 -- ========== HEADER PREMIUM ==========
 local header = Instance.new("Frame")
 header.Size = UDim2.new(1, 0, 0, 70)
-header.BackgroundColor3 = COLORS.Primary
-header.BackgroundTransparency = 0.85
+header.BackgroundColor3 = COLORS.BackgroundSecondary
+header.BackgroundTransparency = 0.1
 header.BorderSizePixel = 1
-header.BorderColor3 = Color3.fromRGB(255, 255, 255)
+header.BorderColor3 = COLORS.PrimaryDark
 header.Parent = mainFrame
 
 local headerCorner = Instance.new("UICorner")
@@ -171,7 +171,7 @@ local gradientLine = Instance.new("Frame")
 gradientLine.Size = UDim2.new(1, 0, 0, 3)
 gradientLine.Position = UDim2.new(0, 0, 1, 0)
 gradientLine.BackgroundColor3 = COLORS.Primary
-gradientLine.BackgroundTransparency = 0.2
+gradientLine.BackgroundTransparency = 0.1
 gradientLine.BorderSizePixel = 0
 gradientLine.Parent = header
 
@@ -181,7 +181,7 @@ headerIcon.Size = UDim2.new(0, 40, 1, 0)
 headerIcon.Position = UDim2.new(0.03, 0, 0, 0)
 headerIcon.BackgroundTransparency = 1
 headerIcon.Text = "◆"
-headerIcon.TextColor3 = Color3.fromRGB(255, 255, 255)
+headerIcon.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
 headerIcon.Font = Enum.Font.GothamBold
 headerIcon.TextSize = 28
 headerIcon.TextXAlignment = Enum.TextXAlignment.Center
@@ -193,7 +193,7 @@ title.Size = UDim2.new(0.5, 0, 0.6, 0)
 title.Position = UDim2.new(0.12, 0, 0.1, 0)
 title.BackgroundTransparency = 1
 title.Text = "PREMIUM ULTRA"
-title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
 title.Font = Enum.Font.GothamBold
 title.TextSize = 20
 title.TextXAlignment = Enum.TextXAlignment.Left
@@ -205,7 +205,7 @@ subTitle.Size = UDim2.new(0.5, 0, 0.35, 0)
 subTitle.Position = UDim2.new(0.12, 0, 0.6, 0)
 subTitle.BackgroundTransparency = 1
 subTitle.Text = "⚡ Ultimate Hack System"
-subTitle.TextColor3 = Color3.fromRGB(200, 200, 255)
+subTitle.TextColor3 = Color3.fromRGB(220, 220, 240) -- Branco
 subTitle.Font = Enum.Font.Gotham
 subTitle.TextSize = 11
 subTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -228,7 +228,7 @@ local closeBtn = Instance.new("TextButton")
 closeBtn.Size = UDim2.new(0, 38, 0, 38)
 closeBtn.Position = UDim2.new(1, -48, 0, 16)
 closeBtn.BackgroundColor3 = COLORS.Danger
-closeBtn.BackgroundTransparency = 0.7
+closeBtn.BackgroundTransparency = 0.1
 closeBtn.Text = "✕"
 closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 closeBtn.Font = Enum.Font.GothamBold
@@ -253,7 +253,7 @@ scrollFrame.Parent = mainFrame
 scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 1900)
 scrollFrame.ScrollBarThickness = 4
 scrollFrame.ScrollBarImageColor3 = COLORS.Primary
-scrollFrame.ScrollBarImageTransparency = 0.3
+scrollFrame.ScrollBarImageTransparency = 0.1
 
 -- ============================================
 -- FUNÇÕES DE CRIAÇÃO DE ELEMENTOS
@@ -265,9 +265,9 @@ local function createCategory(parent, text, yPos, icon, color)
     frame.Size = UDim2.new(0.94, 0, 0, 36)
     frame.Position = UDim2.new(0.03, 0, yPos, 0)
     frame.BackgroundColor3 = color or COLORS.Primary
-    frame.BackgroundTransparency = 0.8
+    frame.BackgroundTransparency = 0.1
     frame.BorderSizePixel = 1
-    frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+    frame.BorderColor3 = Color3.fromRGB(255, 255, 255) -- Borda branca
     frame.Parent = parent
     
     local frameCorner = Instance.new("UICorner")
@@ -279,7 +279,7 @@ local function createCategory(parent, text, yPos, icon, color)
     label.Position = UDim2.new(0.04, 0, 0, 0)
     label.BackgroundTransparency = 1
     label.Text = icon .. "  " .. text
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextColor3 = Color3.fromRGB(255, 255, 255) -- Texto BRANCO
     label.Font = Enum.Font.GothamBold
     label.TextSize = 15
     label.TextXAlignment = Enum.TextXAlignment.Left
@@ -293,8 +293,8 @@ local function createPremiumToggle(parent, text, yPos, color, icon, callback)
     local frame = Instance.new("Frame")
     frame.Size = UDim2.new(0.94, 0, 0, 46)
     frame.Position = UDim2.new(0.03, 0, yPos, 0)
-    frame.BackgroundColor3 = COLORS.Card
-    frame.BackgroundTransparency = 0.2
+    frame.BackgroundColor3 = COLORS.Card -- Fundo escuro do botão
+    frame.BackgroundTransparency = 0.1
     frame.BorderSizePixel = 1
     frame.BorderColor3 = color or COLORS.Primary
     frame.Parent = parent
@@ -309,19 +309,19 @@ local function createPremiumToggle(parent, text, yPos, color, icon, callback)
     iconLabel.Position = UDim2.new(0.02, 0, 0, 0)
     iconLabel.BackgroundTransparency = 1
     iconLabel.Text = icon or "◆"
-    iconLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    iconLabel.TextColor3 = color or COLORS.Primary
     iconLabel.Font = Enum.Font.Gotham
     iconLabel.TextSize = 18
     iconLabel.TextXAlignment = Enum.TextXAlignment.Center
     iconLabel.Parent = frame
     
-    -- Texto
+    -- Texto (BRANCO PURO)
     local btn = Instance.new("TextButton")
     btn.Size = UDim2.new(0.55, 0, 1, 0)
     btn.Position = UDim2.new(0.1, 0, 0, 0)
     btn.BackgroundTransparency = 1
     btn.Text = text
-    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    btn.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
     btn.Font = Enum.Font.GothamSemibold
     btn.TextSize = 14
     btn.TextXAlignment = Enum.TextXAlignment.Left
@@ -333,7 +333,7 @@ local function createPremiumToggle(parent, text, yPos, color, icon, callback)
     status.Size = UDim2.new(0, 44, 0, 24)
     status.Position = UDim2.new(0.88, 0, 0.24, 0)
     status.BackgroundColor3 = COLORS.Danger
-    status.BackgroundTransparency = 0.2
+    status.BackgroundTransparency = 0.1
     status.BorderSizePixel = 1
     status.BorderColor3 = Color3.fromRGB(255, 255, 255)
     status.Parent = frame
@@ -347,7 +347,7 @@ local function createPremiumToggle(parent, text, yPos, color, icon, callback)
     statusGlow.Size = UDim2.new(1, 0, 1, 0)
     statusGlow.Position = UDim2.new(0, 0, 0, 0)
     statusGlow.BackgroundColor3 = COLORS.Danger
-    statusGlow.BackgroundTransparency = 0.7
+    statusGlow.BackgroundTransparency = 0.5
     statusGlow.BorderSizePixel = 0
     statusGlow.Parent = status
     
@@ -360,7 +360,7 @@ local function createPremiumToggle(parent, text, yPos, color, icon, callback)
     statusText.Size = UDim2.new(1, 0, 1, 0)
     statusText.BackgroundTransparency = 1
     statusText.Text = "OFF"
-    statusText.TextColor3 = Color3.fromRGB(255, 255, 255)
+    statusText.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
     statusText.Font = Enum.Font.GothamBold
     statusText.TextSize = 10
     statusText.Parent = status
@@ -377,24 +377,24 @@ local function createPremiumToggle(parent, text, yPos, color, icon, callback)
             statusGlow.BackgroundColor3 = COLORS.Success
             statusText.Text = "ON"
             frame.BorderColor3 = COLORS.Success
-            frame.BackgroundTransparency = 0.1
+            frame.BackgroundColor3 = Color3.fromRGB(45, 65, 45) -- Fundo levemente esverdeado escuro
         else
             status.BackgroundColor3 = COLORS.Danger
             statusGlow.BackgroundColor3 = COLORS.Danger
             statusText.Text = "OFF"
             frame.BorderColor3 = color or COLORS.Primary
-            frame.BackgroundTransparency = 0.2
+            frame.BackgroundColor3 = COLORS.Card -- Volta ao fundo escuro padrão
         end
     end)
     
     -- Hover effect
     btn.MouseEnter:Connect(function()
-        TweenService:Create(frame, TweenInfo.new(0.15), {BackgroundTransparency = 0.05}):Play()
+        TweenService:Create(frame, TweenInfo.new(0.15), {BackgroundColor3 = COLORS.CardHover}):Play()
     end)
     
     btn.MouseLeave:Connect(function()
         if not active then
-            TweenService:Create(frame, TweenInfo.new(0.15), {BackgroundTransparency = 0.2}):Play()
+            TweenService:Create(frame, TweenInfo.new(0.15), {BackgroundColor3 = COLORS.Card}):Play()
         end
     end)
     
@@ -407,7 +407,7 @@ local function createPremiumSlider(parent, text, yPos, icon, minVal, maxVal, def
     frame.Size = UDim2.new(0.94, 0, 0, 48)
     frame.Position = UDim2.new(0.03, 0, yPos, 0)
     frame.BackgroundColor3 = COLORS.Card
-    frame.BackgroundTransparency = 0.2
+    frame.BackgroundTransparency = 0.1
     frame.BorderSizePixel = 1
     frame.BorderColor3 = COLORS.Primary
     frame.Parent = parent
@@ -422,19 +422,19 @@ local function createPremiumSlider(parent, text, yPos, icon, minVal, maxVal, def
     iconLabel.Position = UDim2.new(0.02, 0, 0, 0)
     iconLabel.BackgroundTransparency = 1
     iconLabel.Text = icon or "◆"
-    iconLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    iconLabel.TextColor3 = COLORS.PrimaryLight
     iconLabel.Font = Enum.Font.Gotham
     iconLabel.TextSize = 16
     iconLabel.TextXAlignment = Enum.TextXAlignment.Center
     iconLabel.Parent = frame
     
-    -- Texto
+    -- Texto (BRANCO)
     local label = Instance.new("TextLabel")
     label.Size = UDim2.new(0.38, 0, 1, 0)
     label.Position = UDim2.new(0.1, 0, 0, 0)
     label.BackgroundTransparency = 1
     label.Text = text
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
     label.Font = Enum.Font.Gotham
     label.TextSize = 13
     label.TextXAlignment = Enum.TextXAlignment.Left
@@ -446,7 +446,7 @@ local function createPremiumSlider(parent, text, yPos, icon, minVal, maxVal, def
     valueLabel.Position = UDim2.new(0.52, 0, 0, 0)
     valueLabel.BackgroundTransparency = 1
     valueLabel.Text = tostring(defaultVal)
-    valueLabel.TextColor3 = COLORS.Primary
+    valueLabel.TextColor3 = COLORS.PrimaryLight
     valueLabel.Font = Enum.Font.GothamBold
     valueLabel.TextSize = 16
     valueLabel.TextXAlignment = Enum.TextXAlignment.Center
@@ -457,7 +457,7 @@ local function createPremiumSlider(parent, text, yPos, icon, minVal, maxVal, def
     minusBtn.Size = UDim2.new(0, 28, 0, 28)
     minusBtn.Position = UDim2.new(0.72, 0, 0.21, 0)
     minusBtn.BackgroundColor3 = COLORS.Danger
-    minusBtn.BackgroundTransparency = 0.6
+    minusBtn.BackgroundTransparency = 0.2
     minusBtn.Text = "−"
     minusBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
     minusBtn.Font = Enum.Font.GothamBold
@@ -475,7 +475,7 @@ local function createPremiumSlider(parent, text, yPos, icon, minVal, maxVal, def
     plusBtn.Size = UDim2.new(0, 28, 0, 28)
     plusBtn.Position = UDim2.new(0.85, 0, 0.21, 0)
     plusBtn.BackgroundColor3 = COLORS.Success
-    plusBtn.BackgroundTransparency = 0.6
+    plusBtn.BackgroundTransparency = 0.2
     plusBtn.Text = "+"
     plusBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
     plusBtn.Font = Enum.Font.GothamBold
@@ -667,7 +667,6 @@ local infiniteAmmoBtn, infiniteAmmoFrame, infiniteAmmoStatus = createPremiumTogg
         infiniteAmmoActive = active
         if active then
             print("🔫 MUNIÇÃO INFINITA ATIVADA!")
-            -- Loop para manter munição cheia
             game:GetService("RunService").Heartbeat:Connect(function()
                 if not infiniteAmmoActive then return end
                 local backpack = LocalPlayer.Backpack
@@ -1042,7 +1041,7 @@ local statusBar = Instance.new("Frame")
 statusBar.Size = UDim2.new(0.35, 0, 0, 30)
 statusBar.Position = UDim2.new(0.325, 0, 0.01, 0)
 statusBar.BackgroundColor3 = COLORS.Background
-statusBar.BackgroundTransparency = 0.15
+statusBar.BackgroundTransparency = 0.1
 statusBar.BorderSizePixel = 1
 statusBar.BorderColor3 = COLORS.Primary
 statusBar.Parent = screenGui
@@ -1056,7 +1055,7 @@ local statusText = Instance.new("TextLabel")
 statusText.Size = UDim2.new(1, 0, 1, 0)
 statusText.BackgroundTransparency = 1
 statusText.Text = "◆ SYSTEM READY"
-statusText.TextColor3 = COLORS.Primary
+statusText.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
 statusText.Font = Enum.Font.GothamBold
 statusText.TextSize = 13
 statusText.Parent = statusBar
@@ -1143,7 +1142,7 @@ local function updateStatus()
         statusText.TextColor3 = COLORS.Success
     else
         statusText.Text = "◆ SYSTEM READY"
-        statusText.TextColor3 = COLORS.Primary
+        statusText.TextColor3 = Color3.fromRGB(255, 255, 255) -- Branco
     end
 end
 
@@ -1157,9 +1156,9 @@ end)
 -- INSTRUÇÕES
 -- ============================================
 print("========================================")
-print("💎 PAINEL PREMIUM V5.0 - ORGANIZADO!")
+print("💎 PAINEL PREMIUM V5.0 - TEXTO BRANCO!")
 print("========================================")
-print("◆ Design profissional nível R$1.000.000")
+print("◆ Design de alto contraste")
 print("◆ 5 categorias organizadas")
 print("◆ 19 funções premium")
 print("◆ Sliders ajustáveis")
